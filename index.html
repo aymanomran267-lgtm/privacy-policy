@@ -6,10 +6,13 @@
 <title>Privacy Policy</title>
 
 <style>
+/* Gradient background */
 body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(135deg, #0f172a, #020617);
+    background: linear-gradient(135deg, #020617, #0f172a, #020617);
+    background-size: 400% 400%;
+    animation: gradientMove 12s ease infinite;
     color: #e2e8f0;
 }
 
@@ -18,12 +21,12 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
-    backdrop-filter: blur(10px);
-    background: rgba(30,41,59,0.7);
+    backdrop-filter: blur(12px);
+    background: rgba(15,23,42,0.6);
     padding: 15px;
     text-align: center;
     font-weight: bold;
-    z-index: 1000;
+    letter-spacing: 1px;
 }
 
 /* Layout */
@@ -33,38 +36,31 @@ body {
     padding: 20px;
 }
 
-/* Card */
+/* Glass Card */
 .card {
-    background: rgba(30,41,59,0.7);
-    backdrop-filter: blur(15px);
+    background: rgba(30,41,59,0.6);
+    backdrop-filter: blur(20px);
     padding: 30px;
     border-radius: 20px;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+    box-shadow: 0 15px 50px rgba(0,0,0,0.5);
     animation: fadeIn 1s ease;
 }
 
-/* Headings */
+/* Titles */
 h1 {
     font-size: 34px;
 }
 
 h2 {
-    color: #38bdf8;
+    color: #60a5fa;
     margin-top: 40px;
     position: relative;
+    transition: 0.3s;
 }
 
-/* Underline animation */
-h2::after {
-    content: "";
-    width: 0;
-    height: 2px;
-    background: #38bdf8;
-    display: block;
-    transition: 0.4s;
-}
-h2:hover::after {
-    width: 80px;
+/* Glow hover */
+h2:hover {
+    text-shadow: 0 0 10px #60a5fa;
 }
 
 /* Text */
@@ -82,39 +78,57 @@ p {
 }
 .toc a {
     display: block;
-    color: #38bdf8;
+    color: #60a5fa;
     text-decoration: none;
-    margin: 5px 0;
+    margin: 6px 0;
+    transition: 0.2s;
+}
+.toc a:hover {
+    transform: translateX(6px);
+    color: #93c5fd;
 }
 
-/* Scroll animation */
+/* Fade animation */
 .fade {
     opacity: 0;
-    transform: translateY(30px);
-    transition: 0.6s;
+    transform: translateY(40px);
+    transition: 0.8s ease;
 }
 .show {
     opacity: 1;
     transform: translateY(0);
 }
 
-/* Button */
+/* Floating button */
 .top-btn {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background: #38bdf8;
+    background: #3b82f6;
     border: none;
-    padding: 12px;
+    padding: 14px;
     border-radius: 50%;
     cursor: pointer;
+    box-shadow: 0 0 15px rgba(59,130,246,0.7);
     display: none;
+    animation: float 3s infinite ease-in-out;
 }
 
 /* Animations */
 @keyframes fadeIn {
-    from {opacity:0;}
-    to {opacity:1;}
+    from {opacity:0; transform: scale(0.98);}
+    to {opacity:1; transform: scale(1);}
+}
+
+@keyframes gradientMove {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
+
+@keyframes float {
+    0%,100% {transform: translateY(0);}
+    50% {transform: translateY(-6px);}
 }
 </style>
 </head>
@@ -129,13 +143,12 @@ p {
 <h1>Privacy Policy</h1>
 <p><strong>Last updated:</strong> 9/4/2026</p>
 
-<!-- Table of Contents -->
 <div class="toc">
 <strong>Contents</strong>
 <a href="#1">1. Introduction</a>
 <a href="#2">2. Information We Collect</a>
 <a href="#3">3. Location Services</a>
-<a href="#4">4. How We Use Data</a>
+<a href="#4">4. Data Usage</a>
 <a href="#5">5. No Ads</a>
 <a href="#6">6. Data Sharing</a>
 <a href="#7">7. Security</a>
@@ -143,22 +156,22 @@ p {
 </div>
 
 <h2 id="1" class="fade">1. Introduction</h2>
-<p class="fade">We are committed to protecting your privacy and ensuring transparency.</p>
+<p class="fade">We are committed to protecting your privacy.</p>
 
 <h2 id="2" class="fade">2. Information We Collect</h2>
-<p class="fade">We collect limited data such as location, device info, and usage.</p>
+<p class="fade">We collect limited data such as location and usage.</p>
 
 <h2 id="3" class="fade">3. Location Services</h2>
-<p class="fade">Used only for prayer times and Qibla direction.</p>
+<p class="fade">Used only for prayer times and Qibla.</p>
 
-<h2 id="4" class="fade">4. How We Use Data</h2>
-<p class="fade">To improve performance and provide features.</p>
+<h2 id="4" class="fade">4. Data Usage</h2>
+<p class="fade">To improve performance and user experience.</p>
 
 <h2 id="5" class="fade">5. No Advertising</h2>
-<p class="fade">We do NOT use ads or tracking systems.</p>
+<p class="fade">No ads or tracking technologies are used.</p>
 
 <h2 id="6" class="fade">6. Data Sharing</h2>
-<p class="fade">We do not sell or share your data.</p>
+<p class="fade">We do not share your data.</p>
 
 <h2 id="7" class="fade">7. Security</h2>
 <p class="fade">We use strong security measures.</p>
@@ -173,20 +186,19 @@ p {
 
 <script>
 // Scroll animation
-const faders = document.querySelectorAll('.fade');
+const items = document.querySelectorAll('.fade');
 
-function showOnScroll() {
-    faders.forEach(el => {
+function reveal() {
+    items.forEach(el => {
         if (el.getBoundingClientRect().top < window.innerHeight - 50) {
             el.classList.add('show');
         }
     });
 }
+window.addEventListener('scroll', reveal);
+reveal();
 
-window.addEventListener('scroll', showOnScroll);
-showOnScroll();
-
-// Scroll to top
+// Top button
 window.onscroll = function () {
     document.getElementById("topBtn").style.display =
         document.documentElement.scrollTop > 300 ? "block" : "none";
