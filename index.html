@@ -26,6 +26,18 @@ body {
     z-index: 1000;
 }
 
+/* Language Button */
+.lang-btn {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    background: #38bdf8;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
 /* Layout */
 .container {
     max-width: 1000px;
@@ -44,27 +56,9 @@ body {
 }
 
 /* Headings */
-h1 {
-    font-size: 34px;
-}
-
 h2 {
     color: #38bdf8;
     margin-top: 40px;
-    position: relative;
-}
-
-/* Underline animation */
-h2::after {
-    content: "";
-    width: 0;
-    height: 2px;
-    background: #38bdf8;
-    display: block;
-    transition: 0.4s;
-}
-h2:hover::after {
-    width: 80px;
 }
 
 /* Text */
@@ -73,21 +67,7 @@ p {
     color: #cbd5f5;
 }
 
-/* TOC */
-.toc {
-    background: rgba(15,23,42,0.8);
-    padding: 20px;
-    border-radius: 12px;
-    margin-bottom: 20px;
-}
-.toc a {
-    display: block;
-    color: #38bdf8;
-    text-decoration: none;
-    margin: 5px 0;
-}
-
-/* Scroll animation */
+/* Animation */
 .fade {
     opacity: 0;
     transform: translateY(30px);
@@ -111,7 +91,6 @@ p {
     display: none;
 }
 
-/* Animations */
 @keyframes fadeIn {
     from {opacity:0;}
     to {opacity:1;}
@@ -121,50 +100,54 @@ p {
 
 <body>
 
-<div class="nav">Privacy Policy</div>
+<div class="nav" id="navTitle">Privacy Policy</div>
+<button class="lang-btn" onclick="toggleLang()">AR</button>
 
 <div class="container">
 <div class="card">
 
-<h1>Privacy Policy</h1>
-<p><strong>Last updated:</strong> 9/4/2026</p>
+<h1 id="title">Privacy Policy</h1>
+<p><strong id="updated">Last updated:</strong> 9/4/2026</p>
 
-<!-- Table of Contents -->
-<div class="toc">
-<strong>Contents</strong>
-<a href="#1">1. Introduction</a>
-<a href="#2">2. Information We Collect</a>
-<a href="#3">3. Location Services</a>
-<a href="#4">4. How We Use Data</a>
-<a href="#5">5. No Ads</a>
-<a href="#6">6. Data Sharing</a>
-<a href="#7">7. Security</a>
-<a href="#8">8. Contact</a>
-</div>
+<h2 class="fade" id="h1">1. Introduction</h2>
+<p class="fade" id="p1">
+This app helps users access prayer times, Qibla direction, and Islamic content easily and accurately.
+</p>
 
-<h2 id="1" class="fade">1. Introduction</h2>
-<p class="fade">We are committed to protecting your privacy and ensuring transparency.</p>
+<h2 class="fade" id="h2">2. Information We Collect</h2>
+<p class="fade" id="p2">
+We may collect location data to calculate prayer times, as well as basic device information to improve performance.
+</p>
 
-<h2 id="2" class="fade">2. Information We Collect</h2>
-<p class="fade">We collect limited data such as location, device info, and usage.</p>
+<h2 class="fade" id="h3">3. Location Services</h2>
+<p class="fade" id="p3">
+Location is used only to determine prayer times and Qibla direction. It is not stored or shared.
+</p>
 
-<h2 id="3" class="fade">3. Location Services</h2>
-<p class="fade">Used only for prayer times and Qibla direction.</p>
+<h2 class="fade" id="h4">4. Notifications</h2>
+<p class="fade" id="p4">
+We may send prayer reminders and notifications. You can disable them anytime.
+</p>
 
-<h2 id="4" class="fade">4. How We Use Data</h2>
-<p class="fade">To improve performance and provide features.</p>
+<h2 class="fade" id="h5">5. No Advertising</h2>
+<p class="fade" id="p5">
+This app does not use ads and does not share your data with advertising companies.
+</p>
 
-<h2 id="5" class="fade">5. No Advertising</h2>
-<p class="fade">We do NOT use ads or tracking systems.</p>
+<h2 class="fade" id="h6">6. Data Security</h2>
+<p class="fade" id="p6">
+We use appropriate security measures to protect your information.
+</p>
 
-<h2 id="6" class="fade">6. Data Sharing</h2>
-<p class="fade">We do not sell or share your data.</p>
+<h2 class="fade" id="h7">7. User Rights</h2>
+<p class="fade" id="p7">
+You can disable permissions or delete app data anytime from your device settings.
+</p>
 
-<h2 id="7" class="fade">7. Security</h2>
-<p class="fade">We use strong security measures.</p>
-
-<h2 id="8" class="fade">8. Contact</h2>
-<p class="fade">Email: omran_adam@yahoo.com</p>
+<h2 class="fade" id="h8">8. Contact</h2>
+<p class="fade" id="p8">
+Email: omran_adam@yahoo.com
+</p>
 
 </div>
 </div>
@@ -172,7 +155,7 @@ p {
 <button class="top-btn" id="topBtn">↑</button>
 
 <script>
-// Scroll animation
+// Animation
 const faders = document.querySelectorAll('.fade');
 
 function showOnScroll() {
@@ -182,19 +165,48 @@ function showOnScroll() {
         }
     });
 }
-
 window.addEventListener('scroll', showOnScroll);
 showOnScroll();
 
-// Scroll to top
+// Scroll top
 window.onscroll = function () {
     document.getElementById("topBtn").style.display =
         document.documentElement.scrollTop > 300 ? "block" : "none";
 };
-
 document.getElementById("topBtn").onclick = function () {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 };
+
+// Language toggle
+let isEnglish = true;
+
+function toggleLang() {
+    isEnglish = !isEnglish;
+
+    if (!isEnglish) {
+        document.body.dir = "rtl";
+        document.getElementById("navTitle").innerText = "سياسة الخصوصية";
+        document.getElementById("title").innerText = "سياسة الخصوصية";
+        document.getElementById("updated").innerText = "آخر تحديث:";
+        document.getElementById("h1").innerText = "1. المقدمة";
+        document.getElementById("p1").innerText = "يساعد التطبيق المستخدمين في معرفة مواقيت الصلاة واتجاه القبلة بسهولة.";
+        document.getElementById("h2").innerText = "2. البيانات التي نجمعها";
+        document.getElementById("p2").innerText = "قد نجمع الموقع لتحسين دقة مواقيت الصلاة.";
+        document.getElementById("h3").innerText = "3. خدمات الموقع";
+        document.getElementById("p3").innerText = "يتم استخدام الموقع فقط لتحديد القبلة ومواقيت الصلاة.";
+        document.getElementById("h4").innerText = "4. الإشعارات";
+        document.getElementById("p4").innerText = "يمكن إرسال تذكيرات الصلاة ويمكنك إيقافها.";
+        document.getElementById("h5").innerText = "5. بدون إعلانات";
+        document.getElementById("p5").innerText = "لا يحتوي التطبيق على إعلانات.";
+        document.getElementById("h6").innerText = "6. الأمان";
+        document.getElementById("p6").innerText = "نحمي بياناتك باستخدام وسائل آمنة.";
+        document.getElementById("h7").innerText = "7. حقوق المستخدم";
+        document.getElementById("p7").innerText = "يمكنك التحكم في البيانات من إعدادات جهازك.";
+        document.getElementById("h8").innerText = "8. التواصل";
+    } else {
+        location.reload();
+    }
+}
 </script>
 
 </body>
