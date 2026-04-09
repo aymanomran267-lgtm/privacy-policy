@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: 'Segoe UI', Tahoma, sans-serif;
+        background: #0f172a;
+        color: #e2e8f0;
+    }
+
+    .container {
+        max-width: 900px;
+        margin: auto;
+        padding: 40px 20px;
+        animation: fadeIn 1s ease;
+    }
+
+    .card {
+        background: #1e293b;
+        padding: 30px;
+        border-radius: 16px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        animation: slideUp 0.8s ease;
+    }
+
+    h1 {
+        font-size: 32px;
+        margin-bottom: 10px;
+    }
+
+    h2 {
+        margin-top: 25px;
+        color: #38bdf8;
+        position: relative;
+    }
+
+    h2::after {
+        content: "";
+        display: block;
+        width: 0;
+        height: 2px;
+        background: #38bdf8;
+        transition: width 0.4s;
+    }
+
+    h2:hover::after {
+        width: 60px;
+    }
+
+    p {
+        line-height: 1.7;
+        color: #cbd5f5;
+    }
+
+    ul {
+        padding-left: 20px;
+    }
+
+    li {
+        margin-bottom: 8px;
+        transition: transform 0.2s ease;
+    }
+
+    li:hover {
+        transform: translateX(5px);
+    }
+
+    .badge {
+        display: inline-block;
+        background: #22c55e;
+        color: white;
+        padding: 5px 12px;
+        border-radius: 999px;
+        font-size: 12px;
+        margin-bottom: 10px;
+        animation: pulse 2s infinite;
+    }
+
+    .footer {
+        margin-top: 30px;
+        font-size: 14px;
+        color: #94a3b8;
+        text-align: center;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+
+    @keyframes slideUp {
+        from { transform: translateY(30px); opacity: 0; }
+        to { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.05); }
+        100% { transform: scale(1); }
+    }
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <div class="card">
+
+        <span class="badge">No Ads</span>
+        <h1>Privacy Policy</h1>
+        <p><strong>Last updated:</strong> [ضع التاريخ]</p>
+
+        <p>Welcome to <strong>[اسم التطبيق]</strong>. We respect your privacy and are committed to protecting your personal information.</p>
+
+        <h2>1. Information We Collect</h2>
+        <ul>
+            <li>Location Data (for prayer times and Qibla direction)</li>
+            <li>Device Information</li>
+            <li>Usage Data</li>
+        </ul>
+
+        <h2>2. How We Use Your Data</h2>
+        <ul>
+            <li>Provide accurate prayer times and Qibla</li>
+            <li>Improve app performance</li>
+            <li>Send optional notifications</li>
+        </ul>
+
+        <h2>3. No Advertising</h2>
+        <p>We do NOT use ads and do NOT share your data with advertising companies.</p>
+
+        <h2>4. Data Sharing</h2>
+        <p>We do NOT sell or share your personal data with third parties.</p>
+
+        <h2>5. Data Security</h2>
+        <p>We use standard security measures to protect your data.</p>
+
+        <h2>6. Your Rights</h2>
+        <p>You can disable location and notifications anytime from your device settings.</p>
+
+        <h2>7. Children’s Privacy</h2>
+        <p>This app is not intended for children under 13.</p>
+
+        <h2>8. Contact Us</h2>
+        <p>Email: your@email.com</p>
+
+        <div class="footer">
+            © 2026 [اسم التطبيق]. All rights reserved.
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>
