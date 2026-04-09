@@ -8,61 +8,94 @@
 <style>
 body {
     margin: 0;
-    font-family: 'Segoe UI', Tahoma, sans-serif;
-    background: #0f172a;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #0f172a, #020617);
     color: #e2e8f0;
+}
+
+/* Navbar */
+.nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    backdrop-filter: blur(10px);
+    background: rgba(30,41,59,0.7);
+    padding: 15px;
+    text-align: center;
+    font-weight: bold;
+    z-index: 1000;
 }
 
 /* Layout */
 .container {
-    max-width: 900px;
-    margin: auto;
-    padding: 40px 20px;
+    max-width: 1000px;
+    margin: 100px auto;
+    padding: 20px;
 }
 
+/* Card */
 .card {
-    background: #1e293b;
+    background: rgba(30,41,59,0.7);
+    backdrop-filter: blur(15px);
     padding: 30px;
-    border-radius: 16px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+    animation: fadeIn 1s ease;
 }
 
-/* Titles */
+/* Headings */
 h1 {
-    font-size: 32px;
+    font-size: 34px;
 }
 
 h2 {
     color: #38bdf8;
     margin-top: 40px;
+    position: relative;
+}
+
+/* Underline animation */
+h2::after {
+    content: "";
+    width: 0;
+    height: 2px;
+    background: #38bdf8;
+    display: block;
+    transition: 0.4s;
+}
+h2:hover::after {
+    width: 80px;
+}
+
+/* Text */
+p {
+    line-height: 1.8;
+    color: #cbd5f5;
+}
+
+/* TOC */
+.toc {
+    background: rgba(15,23,42,0.8);
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+.toc a {
+    display: block;
+    color: #38bdf8;
+    text-decoration: none;
+    margin: 5px 0;
+}
+
+/* Scroll animation */
+.fade {
     opacity: 0;
     transform: translateY(30px);
-    transition: all 0.6s ease;
+    transition: 0.6s;
 }
-
-/* Paragraph */
-p {
-    line-height: 1.7;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.6s ease;
-}
-
-/* Active animation */
 .show {
-    opacity: 1 !important;
-    transform: translateY(0) !important;
-}
-
-/* Progress bar */
-.progress-bar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 4px;
-    background: #38bdf8;
-    width: 0%;
-    z-index: 999;
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* Button */
@@ -72,18 +105,23 @@ p {
     right: 20px;
     background: #38bdf8;
     border: none;
-    padding: 10px 15px;
-    border-radius: 10px;
-    color: white;
+    padding: 12px;
+    border-radius: 50%;
     cursor: pointer;
     display: none;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {opacity:0;}
+    to {opacity:1;}
 }
 </style>
 </head>
 
 <body>
 
-<div class="progress-bar" id="progressBar"></div>
+<div class="nav">Privacy Policy</div>
 
 <div class="container">
 <div class="card">
@@ -91,49 +129,42 @@ p {
 <h1>Privacy Policy</h1>
 <p><strong>Last updated:</strong> 9/4/2026</p>
 
-<p>Welcome to <strong>Muslim Pro</strong>. This Privacy Policy explains in detail how we handle your data.</p>
+<!-- Table of Contents -->
+<div class="toc">
+<strong>Contents</strong>
+<a href="#1">1. Introduction</a>
+<a href="#2">2. Information We Collect</a>
+<a href="#3">3. Location Services</a>
+<a href="#4">4. How We Use Data</a>
+<a href="#5">5. No Ads</a>
+<a href="#6">6. Data Sharing</a>
+<a href="#7">7. Security</a>
+<a href="#8">8. Contact</a>
+</div>
 
-<h2>1. Introduction</h2>
-<p>We are committed to protecting your privacy and ensuring transparency in how your information is handled and used.</p>
+<h2 id="1" class="fade">1. Introduction</h2>
+<p class="fade">We are committed to protecting your privacy and ensuring transparency.</p>
 
-<h2>2. Information We Collect</h2>
-<p>We may collect location data, device information, and usage data to improve your experience.</p>
+<h2 id="2" class="fade">2. Information We Collect</h2>
+<p class="fade">We collect limited data such as location, device info, and usage.</p>
 
-<h2>3. Location Services</h2>
-<p>Your location is used strictly for calculating prayer times and Qibla direction.</p>
+<h2 id="3" class="fade">3. Location Services</h2>
+<p class="fade">Used only for prayer times and Qibla direction.</p>
 
-<h2>4. How We Use Data</h2>
-<p>We use data to improve performance, provide features, and enhance user experience.</p>
+<h2 id="4" class="fade">4. How We Use Data</h2>
+<p class="fade">To improve performance and provide features.</p>
 
-<h2>5. No Advertising Policy</h2>
-<p>This app does not use ads or tracking technologies for marketing purposes.</p>
+<h2 id="5" class="fade">5. No Advertising</h2>
+<p class="fade">We do NOT use ads or tracking systems.</p>
 
-<h2>6. Data Sharing and Disclosure</h2>
-<p>We do not sell or share your data with third parties.</p>
+<h2 id="6" class="fade">6. Data Sharing</h2>
+<p class="fade">We do not sell or share your data.</p>
 
-<h2>7. Data Retention</h2>
-<p>We retain data only as long as necessary for app functionality.</p>
+<h2 id="7" class="fade">7. Security</h2>
+<p class="fade">We use strong security measures.</p>
 
-<h2>8. Data Security</h2>
-<p>We use industry-standard security measures to protect your data.</p>
-
-<h2>9. User Rights</h2>
-<p>You can access, modify, or delete your data anytime.</p>
-
-<h2>10. Permissions</h2>
-<p>The app may request permissions such as location and notifications.</p>
-
-<h2>11. Children's Privacy</h2>
-<p>We do not knowingly collect data from children under 13.</p>
-
-<h2>12. International Users</h2>
-<p>If you access the app from outside your country, data protection laws may vary.</p>
-
-<h2>13. Changes to Policy</h2>
-<p>We may update this Privacy Policy periodically.</p>
-
-<h2>14. Contact Us</h2>
-<p>Email: omran_adam@yahoo.com</p>
+<h2 id="8" class="fade">8. Contact</h2>
+<p class="fade">Email: omran_adam@yahoo.com</p>
 
 </div>
 </div>
@@ -142,34 +173,25 @@ p {
 
 <script>
 // Scroll animation
-const elements = document.querySelectorAll("h2, p");
+const faders = document.querySelectorAll('.fade');
 
-function reveal() {
-    elements.forEach(el => {
-        const windowHeight = window.innerHeight;
-        const elementTop = el.getBoundingClientRect().top;
-
-        if (elementTop < windowHeight - 50) {
-            el.classList.add("show");
+function showOnScroll() {
+    faders.forEach(el => {
+        if (el.getBoundingClientRect().top < window.innerHeight - 50) {
+            el.classList.add('show');
         }
     });
 }
 
-window.addEventListener("scroll", reveal);
-reveal();
-
-// Progress bar
-window.onscroll = function () {
-    let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-    let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    let scrolled = (winScroll / height) * 100;
-    document.getElementById("progressBar").style.width = scrolled + "%";
-
-    // Show button
-    document.getElementById("topBtn").style.display = winScroll > 300 ? "block" : "none";
-};
+window.addEventListener('scroll', showOnScroll);
+showOnScroll();
 
 // Scroll to top
+window.onscroll = function () {
+    document.getElementById("topBtn").style.display =
+        document.documentElement.scrollTop > 300 ? "block" : "none";
+};
+
 document.getElementById("topBtn").onclick = function () {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 };
