@@ -5,15 +5,29 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Privacy Policy</title>
 
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
 <style>
-/* Gradient background */
+:root {
+    --bg: #020617;
+    --card: rgba(30,41,59,0.6);
+    --text: #e2e8f0;
+    --accent: #3b82f6;
+}
+
+.light {
+    --bg: #f1f5f9;
+    --card: rgba(255,255,255,0.7);
+    --text: #0f172a;
+    --accent: #2563eb;
+}
+
 body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(135deg, #020617, #0f172a, #020617);
-    background-size: 400% 400%;
-    animation: gradientMove 12s ease infinite;
-    color: #e2e8f0;
+    background: var(--bg);
+    color: var(--text);
+    transition: 0.5s;
 }
 
 /* Navbar */
@@ -21,12 +35,26 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
-    backdrop-filter: blur(12px);
-    background: rgba(15,23,42,0.6);
+    backdrop-filter: blur(10px);
+    background: var(--card);
     padding: 15px;
     text-align: center;
-    font-weight: bold;
-    letter-spacing: 1px;
+    z-index: 1000;
+}
+
+/* Buttons */
+.controls {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+}
+
+.controls button {
+    margin-left: 5px;
+    padding: 8px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
 }
 
 /* Layout */
@@ -36,99 +64,53 @@ body {
     padding: 20px;
 }
 
-/* Glass Card */
 .card {
-    background: rgba(30,41,59,0.6);
+    background: var(--card);
     backdrop-filter: blur(20px);
     padding: 30px;
     border-radius: 20px;
-    box-shadow: 0 15px 50px rgba(0,0,0,0.5);
-    animation: fadeIn 1s ease;
-}
-
-/* Titles */
-h1 {
-    font-size: 34px;
-}
-
-h2 {
-    color: #60a5fa;
-    margin-top: 40px;
-    position: relative;
-    transition: 0.3s;
-}
-
-/* Glow hover */
-h2:hover {
-    text-shadow: 0 0 10px #60a5fa;
 }
 
 /* Text */
+h2 {
+    color: var(--accent);
+    margin-top: 40px;
+}
+
 p {
     line-height: 1.8;
-    color: #cbd5f5;
 }
 
-/* TOC */
-.toc {
-    background: rgba(15,23,42,0.8);
-    padding: 20px;
-    border-radius: 12px;
-    margin-bottom: 20px;
-}
-.toc a {
-    display: block;
-    color: #60a5fa;
-    text-decoration: none;
-    margin: 6px 0;
-    transition: 0.2s;
-}
-.toc a:hover {
-    transform: translateX(6px);
-    color: #93c5fd;
-}
-
-/* Fade animation */
+/* Animations */
 .fade {
     opacity: 0;
-    transform: translateY(40px);
-    transition: 0.8s ease;
+    transform: translateY(30px);
+    transition: 0.6s;
 }
 .show {
     opacity: 1;
     transform: translateY(0);
 }
 
-/* Floating button */
+/* Button */
 .top-btn {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background: #3b82f6;
+    background: var(--accent);
     border: none;
-    padding: 14px;
+    padding: 12px;
     border-radius: 50%;
     cursor: pointer;
-    box-shadow: 0 0 15px rgba(59,130,246,0.7);
     display: none;
-    animation: float 3s infinite ease-in-out;
 }
 
-/* Animations */
-@keyframes fadeIn {
-    from {opacity:0; transform: scale(0.98);}
-    to {opacity:1; transform: scale(1);}
-}
-
-@keyframes gradientMove {
-    0% {background-position: 0% 50%;}
-    50% {background-position: 100% 50%;}
-    100% {background-position: 0% 50%;}
-}
-
-@keyframes float {
-    0%,100% {transform: translateY(0);}
-    50% {transform: translateY(-6px);}
+/* TOC */
+.toc a {
+    display: block;
+    margin: 5px 0;
+    color: var(--accent);
+    text-decoration: none;
 }
 </style>
 </head>
@@ -137,47 +119,30 @@ p {
 
 <div class="nav">Privacy Policy</div>
 
+<div class="controls">
+    <button onclick="toggleLang()">🌍</button>
+    <button onclick="toggleMode()">🌙</button>
+</div>
+
 <div class="container">
 <div class="card">
 
-<h1>Privacy Policy</h1>
-<p><strong>Last updated:</strong> 9/4/2026</p>
+<h1 id="title">Privacy Policy</h1>
 
 <div class="toc">
-<strong>Contents</strong>
-<a href="#1">1. Introduction</a>
-<a href="#2">2. Information We Collect</a>
-<a href="#3">3. Location Services</a>
-<a href="#4">4. Data Usage</a>
-<a href="#5">5. No Ads</a>
-<a href="#6">6. Data Sharing</a>
-<a href="#7">7. Security</a>
-<a href="#8">8. Contact</a>
+<a href="#1">1</a>
+<a href="#2">2</a>
+<a href="#3">3</a>
 </div>
 
-<h2 id="1" class="fade">1. Introduction</h2>
-<p class="fade">We are committed to protecting your privacy.</p>
+<h2 id="1" class="fade"><i class="fa fa-shield"></i> Introduction</h2>
+<p class="fade" id="intro">We protect your privacy.</p>
 
-<h2 id="2" class="fade">2. Information We Collect</h2>
-<p class="fade">We collect limited data such as location and usage.</p>
+<h2 id="2" class="fade"><i class="fa fa-database"></i> Data</h2>
+<p class="fade" id="data">We collect minimal data.</p>
 
-<h2 id="3" class="fade">3. Location Services</h2>
-<p class="fade">Used only for prayer times and Qibla.</p>
-
-<h2 id="4" class="fade">4. Data Usage</h2>
-<p class="fade">To improve performance and user experience.</p>
-
-<h2 id="5" class="fade">5. No Advertising</h2>
-<p class="fade">No ads or tracking technologies are used.</p>
-
-<h2 id="6" class="fade">6. Data Sharing</h2>
-<p class="fade">We do not share your data.</p>
-
-<h2 id="7" class="fade">7. Security</h2>
-<p class="fade">We use strong security measures.</p>
-
-<h2 id="8" class="fade">8. Contact</h2>
-<p class="fade">Email: omran_adam@yahoo.com</p>
+<h2 id="3" class="fade"><i class="fa fa-lock"></i> Security</h2>
+<p class="fade" id="sec">Your data is safe.</p>
 
 </div>
 </div>
@@ -187,26 +152,44 @@ p {
 <script>
 // Scroll animation
 const items = document.querySelectorAll('.fade');
-
-function reveal() {
+window.addEventListener('scroll', () => {
     items.forEach(el => {
         if (el.getBoundingClientRect().top < window.innerHeight - 50) {
             el.classList.add('show');
         }
     });
-}
-window.addEventListener('scroll', reveal);
-reveal();
 
-// Top button
-window.onscroll = function () {
     document.getElementById("topBtn").style.display =
         document.documentElement.scrollTop > 300 ? "block" : "none";
-};
+});
 
-document.getElementById("topBtn").onclick = function () {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-};
+// Scroll to top
+topBtn.onclick = () => window.scrollTo({top:0,behavior:'smooth'});
+
+// Dark mode
+function toggleMode(){
+    document.body.classList.toggle("light");
+}
+
+// Language toggle
+let en = true;
+function toggleLang(){
+    const clickSound = new Audio("https://www.soundjay.com/buttons/sounds/button-16.mp3");
+    clickSound.play();
+
+    en = !en;
+    if(en){
+        title.innerText = "Privacy Policy";
+        intro.innerText = "We protect your privacy.";
+        data.innerText = "We collect minimal data.";
+        sec.innerText = "Your data is safe.";
+    } else {
+        title.innerText = "سياسة الخصوصية";
+        intro.innerText = "نحن نحمي خصوصيتك.";
+        data.innerText = "نجمع أقل قدر من البيانات.";
+        sec.innerText = "بياناتك آمنة.";
+    }
+}
 </script>
 
 </body>
