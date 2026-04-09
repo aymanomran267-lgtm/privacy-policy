@@ -5,29 +5,27 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Privacy Policy</title>
 
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-
 <style>
 :root {
-    --bg: #020617;
-    --card: rgba(30,41,59,0.6);
+    --bg: #0f172a;
+    --card: #1e293b;
     --text: #e2e8f0;
     --accent: #3b82f6;
 }
 
 .light {
     --bg: #f1f5f9;
-    --card: rgba(255,255,255,0.7);
+    --card: #ffffff;
     --text: #0f172a;
-    --accent: #2563eb;
 }
 
+/* Body */
 body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
     background: var(--bg);
     color: var(--text);
-    transition: 0.5s;
+    transition: 0.4s;
 }
 
 /* Navbar */
@@ -35,18 +33,18 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
-    backdrop-filter: blur(10px);
     background: var(--card);
     padding: 15px;
     text-align: center;
+    font-weight: bold;
     z-index: 1000;
 }
 
-/* Buttons */
+/* Controls */
 .controls {
     position: fixed;
-    top: 15px;
-    right: 15px;
+    top: 10px;
+    right: 10px;
 }
 
 .controls button {
@@ -59,32 +57,35 @@ body {
 
 /* Layout */
 .container {
-    max-width: 1000px;
+    max-width: 900px;
     margin: 100px auto;
     padding: 20px;
 }
 
 .card {
     background: var(--card);
-    backdrop-filter: blur(20px);
     padding: 30px;
-    border-radius: 20px;
+    border-radius: 16px;
 }
 
-/* Text */
+/* TOC */
+.toc a {
+    display: block;
+    margin: 5px 0;
+    color: var(--accent);
+    text-decoration: none;
+}
+
+/* Titles */
 h2 {
     color: var(--accent);
-    margin-top: 40px;
+    margin-top: 30px;
 }
 
-p {
-    line-height: 1.8;
-}
-
-/* Animations */
+/* Animation */
 .fade {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(20px);
     transition: 0.6s;
 }
 .show {
@@ -104,20 +105,12 @@ p {
     cursor: pointer;
     display: none;
 }
-
-/* TOC */
-.toc a {
-    display: block;
-    margin: 5px 0;
-    color: var(--accent);
-    text-decoration: none;
-}
 </style>
 </head>
 
 <body>
 
-<div class="nav">Privacy Policy</div>
+<div class="nav" id="navTitle">Privacy Policy</div>
 
 <div class="controls">
     <button onclick="toggleLang()">🌍</button>
@@ -128,20 +121,22 @@ p {
 <div class="card">
 
 <h1 id="title">Privacy Policy</h1>
+<p><strong id="updated">Last updated:</strong> 9/4/2026</p>
 
 <div class="toc">
-<a href="#1">1</a>
-<a href="#2">2</a>
-<a href="#3">3</a>
+<strong>Contents</strong>
+<a href="#1">1. Introduction</a>
+<a href="#2">2. Data</a>
+<a href="#3">3. Security</a>
 </div>
 
-<h2 id="1" class="fade"><i class="fa fa-shield"></i> Introduction</h2>
+<h2 id="1" class="fade">1. Introduction</h2>
 <p class="fade" id="intro">We protect your privacy.</p>
 
-<h2 id="2" class="fade"><i class="fa fa-database"></i> Data</h2>
+<h2 id="2" class="fade">2. Data</h2>
 <p class="fade" id="data">We collect minimal data.</p>
 
-<h2 id="3" class="fade"><i class="fa fa-lock"></i> Security</h2>
+<h2 id="3" class="fade">3. Security</h2>
 <p class="fade" id="sec">Your data is safe.</p>
 
 </div>
@@ -150,44 +145,54 @@ p {
 <button class="top-btn" id="topBtn">↑</button>
 
 <script>
-// Scroll animation
+// Animation
 const items = document.querySelectorAll('.fade');
-window.addEventListener('scroll', () => {
+
+function reveal() {
     items.forEach(el => {
         if (el.getBoundingClientRect().top < window.innerHeight - 50) {
             el.classList.add('show');
         }
     });
+}
+window.addEventListener('scroll', reveal);
+reveal();
 
+// Scroll button
+window.onscroll = function () {
     document.getElementById("topBtn").style.display =
         document.documentElement.scrollTop > 300 ? "block" : "none";
-});
+};
 
-// Scroll to top
-topBtn.onclick = () => window.scrollTo({top:0,behavior:'smooth'});
+document.getElementById("topBtn").onclick = function () {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+};
 
-// Dark mode
-function toggleMode(){
+// Dark Mode
+function toggleMode() {
     document.body.classList.toggle("light");
 }
 
-// Language toggle
-let en = true;
-function toggleLang(){
-    const clickSound = new Audio("https://www.soundjay.com/buttons/sounds/button-16.mp3");
-    clickSound.play();
+// Language Toggle
+let isEnglish = true;
 
-    en = !en;
-    if(en){
-        title.innerText = "Privacy Policy";
-        intro.innerText = "We protect your privacy.";
-        data.innerText = "We collect minimal data.";
-        sec.innerText = "Your data is safe.";
+function toggleLang() {
+    isEnglish = !isEnglish;
+
+    if (isEnglish) {
+        document.getElementById("title").innerText = "Privacy Policy";
+        document.getElementById("navTitle").innerText = "Privacy Policy";
+        document.getElementById("updated").innerText = "Last updated:";
+        document.getElementById("intro").innerText = "We protect your privacy.";
+        document.getElementById("data").innerText = "We collect minimal data.";
+        document.getElementById("sec").innerText = "Your data is safe.";
     } else {
-        title.innerText = "سياسة الخصوصية";
-        intro.innerText = "نحن نحمي خصوصيتك.";
-        data.innerText = "نجمع أقل قدر من البيانات.";
-        sec.innerText = "بياناتك آمنة.";
+        document.getElementById("title").innerText = "سياسة الخصوصية";
+        document.getElementById("navTitle").innerText = "سياسة الخصوصية";
+        document.getElementById("updated").innerText = "آخر تحديث:";
+        document.getElementById("intro").innerText = "نحن نحمي خصوصيتك.";
+        document.getElementById("data").innerText = "نجمع أقل قدر من البيانات.";
+        document.getElementById("sec").innerText = "بياناتك آمنة.";
     }
 }
 </script>
