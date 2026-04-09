@@ -5,12 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Privacy Policy</title>
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
 <style>
+/* Reset */
+* {margin:0; padding:0; box-sizing:border-box;}
 body {
-    margin: 0;
     font-family: 'Segoe UI', sans-serif;
     background: linear-gradient(135deg, #0f172a, #020617);
     color: #e2e8f0;
+    scroll-behavior: smooth;
 }
 
 /* Navbar */
@@ -18,12 +22,14 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
-    backdrop-filter: blur(10px);
-    background: rgba(30,41,59,0.7);
-    padding: 15px;
+    backdrop-filter: blur(12px);
+    background: rgba(30,41,59,0.85);
+    padding: 15px 0;
     text-align: center;
     font-weight: bold;
     z-index: 1000;
+    font-size: 20px;
+    color: #38bdf8;
 }
 
 /* Language Button */
@@ -33,15 +39,21 @@ body {
     right: 15px;
     background: #38bdf8;
     border: none;
-    padding: 8px 12px;
-    border-radius: 8px;
+    padding: 8px 14px;
+    border-radius: 10px;
     cursor: pointer;
+    color: #020617;
+    font-weight: bold;
+    transition: 0.3s;
+}
+.lang-btn:hover {
+    background: #0ea5e9;
 }
 
 /* Layout */
 .container {
     max-width: 1000px;
-    margin: 100px auto;
+    margin: 120px auto 50px auto;
     padding: 20px;
 }
 
@@ -56,15 +68,26 @@ body {
 }
 
 /* Headings */
-h2 {
+h1, h2 {
     color: #38bdf8;
     margin-top: 40px;
+}
+h1 {
+    font-size: 36px;
+    text-align: center;
+}
+
+/* Icons for sections */
+h2 i {
+    margin-right: 10px;
+    color: #0ea5e9;
 }
 
 /* Text */
 p {
     line-height: 1.8;
     color: #cbd5f5;
+    margin-top: 10px;
 }
 
 /* Animation */
@@ -78,19 +101,54 @@ p {
     transform: translateY(0);
 }
 
-/* Button */
+/* Top Button */
 .top-btn {
     position: fixed;
     bottom: 20px;
     right: 20px;
     background: #38bdf8;
     border: none;
-    padding: 12px;
+    padding: 14px;
     border-radius: 50%;
     cursor: pointer;
     display: none;
+    color: #020617;
+    font-size: 18px;
+    transition: 0.3s;
+}
+.top-btn:hover {
+    background: #0ea5e9;
 }
 
+/* Features Section */
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+.feature-card {
+    background: rgba(15,23,42,0.7);
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+    transition: 0.3s;
+}
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.5);
+}
+.feature-card i {
+    font-size: 36px;
+    color: #38bdf8;
+    margin-bottom: 15px;
+}
+.feature-card p {
+    color: #cbd5f5;
+}
+
+/* Animation */
 @keyframes fadeIn {
     from {opacity:0;}
     to {opacity:1;}
@@ -109,42 +167,50 @@ p {
 <h1 id="title">Privacy Policy</h1>
 <p><strong id="updated">Last updated:</strong> 9/4/2026</p>
 
-<h2 class="fade" id="h1">1. Introduction</h2>
+<h2 class="fade" id="h1"><i class="fas fa-info-circle"></i>1. Introduction</h2>
 <p class="fade" id="p1">
 This app helps users access prayer times, Qibla direction, and Islamic content easily and accurately.
 </p>
 
-<h2 class="fade" id="h2">2. Information We Collect</h2>
+<h2 class="fade" id="hFeatures"><i class="fas fa-star"></i>App Features</h2>
+<div class="features fade" id="features">
+    <div class="feature-card"><i class="fas fa-clock"></i><p>Accurate Prayer Times</p></div>
+    <div class="feature-card"><i class="fas fa-compass"></i><p>Qibla Direction</p></div>
+    <div class="feature-card"><i class="fas fa-book"></i><p>Islamic Content</p></div>
+    <div class="feature-card"><i class="fas fa-bell"></i><p>Prayer Notifications</p></div>
+</div>
+
+<h2 class="fade" id="h2"><i class="fas fa-database"></i>2. Information We Collect</h2>
 <p class="fade" id="p2">
 We may collect location data to calculate prayer times, as well as basic device information to improve performance.
 </p>
 
-<h2 class="fade" id="h3">3. Location Services</h2>
+<h2 class="fade" id="h3"><i class="fas fa-map-marker-alt"></i>3. Location Services</h2>
 <p class="fade" id="p3">
 Location is used only to determine prayer times and Qibla direction. It is not stored or shared.
 </p>
 
-<h2 class="fade" id="h4">4. Notifications</h2>
+<h2 class="fade" id="h4"><i class="fas fa-bell"></i>4. Notifications</h2>
 <p class="fade" id="p4">
 We may send prayer reminders and notifications. You can disable them anytime.
 </p>
 
-<h2 class="fade" id="h5">5. No Advertising</h2>
+<h2 class="fade" id="h5"><i class="fas fa-ban"></i>5. No Advertising</h2>
 <p class="fade" id="p5">
 This app does not use ads and does not share your data with advertising companies.
 </p>
 
-<h2 class="fade" id="h6">6. Data Security</h2>
+<h2 class="fade" id="h6"><i class="fas fa-lock"></i>6. Data Security</h2>
 <p class="fade" id="p6">
 We use appropriate security measures to protect your information.
 </p>
 
-<h2 class="fade" id="h7">7. User Rights</h2>
+<h2 class="fade" id="h7"><i class="fas fa-user-shield"></i>7. User Rights</h2>
 <p class="fade" id="p7">
 You can disable permissions or delete app data anytime from your device settings.
 </p>
 
-<h2 class="fade" id="h8">8. Contact</h2>
+<h2 class="fade" id="h8"><i class="fas fa-envelope"></i>8. Contact</h2>
 <p class="fade" id="p8">
 Email: omran_adam@yahoo.com
 </p>
@@ -152,10 +218,10 @@ Email: omran_adam@yahoo.com
 </div>
 </div>
 
-<button class="top-btn" id="topBtn">↑</button>
+<button class="top-btn" id="topBtn"><i class="fas fa-arrow-up"></i></button>
 
 <script>
-// Animation
+// Animation on scroll
 const faders = document.querySelectorAll('.fade');
 
 function showOnScroll() {
@@ -168,7 +234,7 @@ function showOnScroll() {
 window.addEventListener('scroll', showOnScroll);
 showOnScroll();
 
-// Scroll top
+// Scroll top button
 window.onscroll = function () {
     document.getElementById("topBtn").style.display =
         document.documentElement.scrollTop > 300 ? "block" : "none";
@@ -177,7 +243,7 @@ document.getElementById("topBtn").onclick = function () {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 };
 
-// Language toggle
+// Language toggle without reload
 let isEnglish = true;
 
 function toggleLang() {
@@ -188,22 +254,32 @@ function toggleLang() {
         document.getElementById("navTitle").innerText = "سياسة الخصوصية";
         document.getElementById("title").innerText = "سياسة الخصوصية";
         document.getElementById("updated").innerText = "آخر تحديث:";
-        document.getElementById("h1").innerText = "1. المقدمة";
-        document.getElementById("p1").innerText = "يساعد التطبيق المستخدمين في معرفة مواقيت الصلاة واتجاه القبلة بسهولة.";
-        document.getElementById("h2").innerText = "2. البيانات التي نجمعها";
-        document.getElementById("p2").innerText = "قد نجمع الموقع لتحسين دقة مواقيت الصلاة.";
-        document.getElementById("h3").innerText = "3. خدمات الموقع";
-        document.getElementById("p3").innerText = "يتم استخدام الموقع فقط لتحديد القبلة ومواقيت الصلاة.";
-        document.getElementById("h4").innerText = "4. الإشعارات";
-        document.getElementById("p4").innerText = "يمكن إرسال تذكيرات الصلاة ويمكنك إيقافها.";
-        document.getElementById("h5").innerText = "5. بدون إعلانات";
-        document.getElementById("p5").innerText = "لا يحتوي التطبيق على إعلانات.";
-        document.getElementById("h6").innerText = "6. الأمان";
-        document.getElementById("p6").innerText = "نحمي بياناتك باستخدام وسائل آمنة.";
-        document.getElementById("h7").innerText = "7. حقوق المستخدم";
-        document.getElementById("p7").innerText = "يمكنك التحكم في البيانات من إعدادات جهازك.";
-        document.getElementById("h8").innerText = "8. التواصل";
+        document.getElementById("h1").innerHTML = "<i class='fas fa-info-circle'></i>1. المقدمة";
+        document.getElementById("p1").innerText = "يساعد التطبيق المستخدمين في معرفة مواقيت الصلاة واتجاه القبلة بسهولة ودقة.";
+        document.getElementById("hFeatures").innerHTML = "<i class='fas fa-star'></i>ميزات التطبيق";
+        document.getElementById("features").innerHTML = `
+            <div class="feature-card"><i class="fas fa-clock"></i><p>مواقيت الصلاة الدقيقة</p></div>
+            <div class="feature-card"><i class="fas fa-compass"></i><p>اتجاه القبلة</p></div>
+            <div class="feature-card"><i class="fas fa-book"></i><p>المحتوى الإسلامي</p></div>
+            <div class="feature-card"><i class="fas fa-bell"></i><p>تذكيرات الصلاة</p></div>
+        `;
+        document.getElementById("h2").innerHTML = "<i class='fas fa-database'></i>2. البيانات التي نجمعها";
+        document.getElementById("p2").innerText = "قد نجمع الموقع لتحسين دقة مواقيت الصلاة، بالإضافة لمعلومات الجهاز الأساسية.";
+        document.getElementById("h3").innerHTML = "<i class='fas fa-map-marker-alt'></i>3. خدمات الموقع";
+        document.getElementById("p3").innerText = "يتم استخدام الموقع فقط لتحديد القبلة ومواقيت الصلاة، ولا يتم تخزينه أو مشاركته.";
+        document.getElementById("h4").innerHTML = "<i class='fas fa-bell'></i>4. الإشعارات";
+        document.getElementById("p4").innerText = "يمكن إرسال تذكيرات الصلاة ويمكنك إيقافها في أي وقت.";
+        document.getElementById("h5").innerHTML = "<i class='fas fa-ban'></i>5. بدون إعلانات";
+        document.getElementById("p5").innerText = "التطبيق لا يحتوي على أي إعلانات ولا يشارك بياناتك مع شركات الدعاية.";
+        document.getElementById("h6").innerHTML = "<i class='fas fa-lock'></i>6. الأمان";
+        document.getElementById("p6").innerText = "نستخدم وسائل حماية مناسبة لحماية بياناتك.";
+        document.getElementById("h7").innerHTML = "<i class='fas fa-user-shield'></i>7. حقوق المستخدم";
+        document.getElementById("p7").innerText = "يمكنك التحكم في الأذونات أو حذف بيانات التطبيق من إعدادات جهازك.";
+        document.getElementById("h8").innerHTML = "<i class='fas fa-envelope'></i>8. التواصل";
+        document.getElementById("p8").innerText = "البريد الإلكتروني: omran_adam@yahoo.com";
     } else {
+        // العودة للإنجليزية
+        document.body.dir = "ltr";
         location.reload();
     }
 }
