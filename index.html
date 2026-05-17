@@ -1,289 +1,805 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Privacy Policy</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Interactive Human Body App</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Exo+2:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-
-<style>
-/* Reset */
-* {margin:0; padding:0; box-sizing:border-box;}
-body {
-    font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(135deg, #0f172a, #020617);
-    color: #e2e8f0;
-    scroll-behavior: smooth;
-}
-
-/* Navbar */
-.nav {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    backdrop-filter: blur(12px);
-    background: rgba(30,41,59,0.85);
-    padding: 15px 0;
-    text-align: center;
-    font-weight: bold;
-    z-index: 1000;
-    font-size: 20px;
-    color: #38bdf8;
-}
-
-/* Language Button */
-.lang-btn {
-    position: fixed;
-    top: 15px;
-    right: 15px;
-    background: #38bdf8;
-    border: none;
-    padding: 8px 14px;
-    border-radius: 10px;
-    cursor: pointer;
-    color: #020617;
-    font-weight: bold;
-    transition: 0.3s;
-}
-.lang-btn:hover {
-    background: #0ea5e9;
-}
-
-/* Layout */
-.container {
-    max-width: 1000px;
-    margin: 120px auto 50px auto;
-    padding: 20px;
-}
-
-/* Card */
-.card {
-    background: rgba(30,41,59,0.7);
-    backdrop-filter: blur(15px);
-    padding: 30px;
-    border-radius: 20px;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
-    animation: fadeIn 1s ease;
-}
-
-/* Headings */
-h1, h2 {
-    color: #38bdf8;
-    margin-top: 40px;
-}
-h1 {
-    font-size: 36px;
-    text-align: center;
-}
-
-/* Icons for sections */
-h2 i {
-    margin-right: 10px;
-    color: #0ea5e9;
-}
-
-/* Text */
-p {
-    line-height: 1.8;
-    color: #cbd5f5;
-    margin-top: 10px;
-}
-
-/* Animation */
-.fade {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: 0.6s;
-}
-.show {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Top Button */
-.top-btn {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: #38bdf8;
-    border: none;
-    padding: 14px;
-    border-radius: 50%;
-    cursor: pointer;
-    display: none;
-    color: #020617;
-    font-size: 18px;
-    transition: 0.3s;
-}
-.top-btn:hover {
-    background: #0ea5e9;
-}
-
-/* Features Section */
-.features {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
-    margin-top: 30px;
-}
-.feature-card {
-    background: rgba(15,23,42,0.7);
-    padding: 20px;
-    border-radius: 15px;
-    text-align: center;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.4);
-    transition: 0.3s;
-}
-.feature-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 40px rgba(0,0,0,0.5);
-}
-.feature-card i {
-    font-size: 36px;
-    color: #38bdf8;
-    margin-bottom: 15px;
-}
-.feature-card p {
-    color: #cbd5f5;
-}
-
-/* Animation */
-@keyframes fadeIn {
-    from {opacity:0;}
-    to {opacity:1;}
-}
-</style>
-</head>
-
-<body>
-
-<div class="nav" id="navTitle">Privacy Policy</div>
-<button class="lang-btn" onclick="toggleLang()">AR</button>
-
-<div class="container">
-<div class="card">
-
-<h1 id="title">Privacy Policy</h1>
-<p><strong id="updated">Last updated:</strong> 9/4/2026</p>
-
-<h2 class="fade" id="h1"><i class="fas fa-info-circle"></i>1. Introduction</h2>
-<p class="fade" id="p1">
-This app helps users access prayer times, Qibla direction, and Islamic content easily and accurately.
-</p>
-
-<h2 class="fade" id="hFeatures"><i class="fas fa-star"></i>App Features</h2>
-<div class="features fade" id="features">
-    <div class="feature-card"><i class="fas fa-clock"></i><p>Accurate Prayer Times</p></div>
-    <div class="feature-card"><i class="fas fa-compass"></i><p>Qibla Direction</p></div>
-    <div class="feature-card"><i class="fas fa-book"></i><p>Islamic Content</p></div>
-    <div class="feature-card"><i class="fas fa-bell"></i><p>Prayer Notifications</p></div>
-</div>
-
-<h2 class="fade" id="h2"><i class="fas fa-database"></i>2. Information We Collect</h2>
-<p class="fade" id="p2">
-We may collect location data to calculate prayer times, as well as basic device information to improve performance.
-</p>
-
-<h2 class="fade" id="h3"><i class="fas fa-map-marker-alt"></i>3. Location Services</h2>
-<p class="fade" id="p3">
-Location is used only to determine prayer times and Qibla direction. It is not stored or shared.
-</p>
-
-<h2 class="fade" id="h4"><i class="fas fa-bell"></i>4. Notifications</h2>
-<p class="fade" id="p4">
-We may send prayer reminders and notifications. You can disable them anytime.
-</p>
-
-<h2 class="fade" id="h5"><i class="fas fa-ban"></i>5. No Advertising</h2>
-<p class="fade" id="p5">
-This app does not use ads and does not share your data with advertising companies.
-</p>
-
-<h2 class="fade" id="h6"><i class="fas fa-lock"></i>6. Data Security</h2>
-<p class="fade" id="p6">
-We use appropriate security measures to protect your information.
-</p>
-
-<h2 class="fade" id="h7"><i class="fas fa-user-shield"></i>7. User Rights</h2>
-<p class="fade" id="p7">
-You can disable permissions or delete app data anytime from your device settings.
-</p>
-
-<h2 class="fade" id="h8"><i class="fas fa-envelope"></i>8. Contact</h2>
-<p class="fade" id="p8">
-Email: omran_adam@yahoo.com
-</p>
-
-</div>
-</div>
-
-<button class="top-btn" id="topBtn"><i class="fas fa-arrow-up"></i></button>
-
-<script>
-// Animation on scroll
-const faders = document.querySelectorAll('.fade');
-
-function showOnScroll() {
-    faders.forEach(el => {
-        if (el.getBoundingClientRect().top < window.innerHeight - 50) {
-            el.classList.add('show');
-        }
-    });
-}
-window.addEventListener('scroll', showOnScroll);
-showOnScroll();
-
-// Scroll top button
-window.onscroll = function () {
-    document.getElementById("topBtn").style.display =
-        document.documentElement.scrollTop > 300 ? "block" : "none";
-};
-document.getElementById("topBtn").onclick = function () {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-};
-
-// Language toggle without reload
-let isEnglish = true;
-
-function toggleLang() {
-    isEnglish = !isEnglish;
-
-    if (!isEnglish) {
-        document.body.dir = "rtl";
-        document.getElementById("navTitle").innerText = "سياسة الخصوصية";
-        document.getElementById("title").innerText = "سياسة الخصوصية";
-        document.getElementById("updated").innerText = "آخر تحديث:";
-        document.getElementById("h1").innerHTML = "<i class='fas fa-info-circle'></i>1. المقدمة";
-        document.getElementById("p1").innerText = "يساعد التطبيق المستخدمين في معرفة مواقيت الصلاة واتجاه القبلة بسهولة ودقة.";
-        document.getElementById("hFeatures").innerHTML = "<i class='fas fa-star'></i>ميزات التطبيق";
-        document.getElementById("features").innerHTML = `
-            <div class="feature-card"><i class="fas fa-clock"></i><p>مواقيت الصلاة الدقيقة</p></div>
-            <div class="feature-card"><i class="fas fa-compass"></i><p>اتجاه القبلة</p></div>
-            <div class="feature-card"><i class="fas fa-book"></i><p>المحتوى الإسلامي</p></div>
-            <div class="feature-card"><i class="fas fa-bell"></i><p>تذكيرات الصلاة</p></div>
-        `;
-        document.getElementById("h2").innerHTML = "<i class='fas fa-database'></i>2. البيانات التي نجمعها";
-        document.getElementById("p2").innerText = "قد نجمع الموقع لتحسين دقة مواقيت الصلاة، بالإضافة لمعلومات الجهاز الأساسية.";
-        document.getElementById("h3").innerHTML = "<i class='fas fa-map-marker-alt'></i>3. خدمات الموقع";
-        document.getElementById("p3").innerText = "يتم استخدام الموقع فقط لتحديد القبلة ومواقيت الصلاة، ولا يتم تخزينه أو مشاركته.";
-        document.getElementById("h4").innerHTML = "<i class='fas fa-bell'></i>4. الإشعارات";
-        document.getElementById("p4").innerText = "يمكن إرسال تذكيرات الصلاة ويمكنك إيقافها في أي وقت.";
-        document.getElementById("h5").innerHTML = "<i class='fas fa-ban'></i>5. بدون إعلانات";
-        document.getElementById("p5").innerText = "التطبيق لا يحتوي على أي إعلانات ولا يشارك بياناتك مع شركات الدعاية.";
-        document.getElementById("h6").innerHTML = "<i class='fas fa-lock'></i>6. الأمان";
-        document.getElementById("p6").innerText = "نستخدم وسائل حماية مناسبة لحماية بياناتك.";
-        document.getElementById("h7").innerHTML = "<i class='fas fa-user-shield'></i>7. حقوق المستخدم";
-        document.getElementById("p7").innerText = "يمكنك التحكم في الأذونات أو حذف بيانات التطبيق من إعدادات جهازك.";
-        document.getElementById("h8").innerHTML = "<i class='fas fa-envelope'></i>8. التواصل";
-        document.getElementById("p8").innerText = "البريد الإلكتروني: omran_adam@yahoo.com";
-    } else {
-        // العودة للإنجليزية
-        document.body.dir = "ltr";
-        location.reload();
+    :root {
+      --cyan: #00e5ff;
+      --cyan-dim: rgba(0,229,255,0.12);
+      --cyan-border: rgba(0,229,255,0.28);
+      --teal: #00c4a7;
+      --bg: #060c1f;
+      --bg2: #0b1430;
+      --bg3: #0f1a3a;
+      --surface: rgba(255,255,255,0.04);
+      --surface-hover: rgba(255,255,255,0.07);
+      --border: rgba(255,255,255,0.08);
+      --border-hover: rgba(255,255,255,0.15);
+      --text: #e8edf8;
+      --text-muted: rgba(232,237,248,0.5);
+      --text-dim: rgba(232,237,248,0.3);
+      --green: #00e5a0;
+      --amber: #ffb347;
+      --blue: #4da6ff;
+      --purple: #a78bfa;
+      --coral: #ff7f72;
+      --pink: #f472b6;
     }
-}
-</script>
 
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Exo 2', sans-serif;
+      font-weight: 400;
+      line-height: 1.7;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* ── Grid background ── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(0,229,255,0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,229,255,0.025) 1px, transparent 1px);
+      background-size: 48px 48px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ── Glow orbs ── */
+    body::after {
+      content: '';
+      position: fixed;
+      top: -200px; right: -200px;
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(0,229,255,0.06) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .orb-bottom {
+      position: fixed;
+      bottom: -150px; left: -150px;
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(0,196,167,0.05) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 20px 60px;
+    }
+
+    /* ── Hero ── */
+    .hero {
+      padding: 60px 0 40px;
+      position: relative;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'Orbitron', monospace;
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--cyan);
+      background: var(--cyan-dim);
+      border: 1px solid var(--cyan-border);
+      border-radius: 100px;
+      padding: 5px 14px;
+      margin-bottom: 28px;
+      animation: fadeSlideUp 0.6s ease both;
+    }
+
+    .hero-eyebrow-dot {
+      width: 5px; height: 5px;
+      background: var(--cyan);
+      border-radius: 50%;
+      box-shadow: 0 0 8px var(--cyan);
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%,100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+
+    .hero h1 {
+      font-family: 'Orbitron', monospace;
+      font-size: clamp(26px, 5vw, 42px);
+      font-weight: 700;
+      line-height: 1.15;
+      color: #fff;
+      margin-bottom: 16px;
+      animation: fadeSlideUp 0.6s 0.1s ease both;
+    }
+
+    .hero h1 em {
+      font-style: normal;
+      color: var(--cyan);
+    }
+
+    .hero-sub {
+      font-size: 15px;
+      color: var(--text-muted);
+      max-width: 560px;
+      margin-bottom: 32px;
+      animation: fadeSlideUp 0.6s 0.2s ease both;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding-top: 28px;
+      border-top: 1px solid var(--border);
+      animation: fadeSlideUp 0.6s 0.3s ease both;
+    }
+
+    .meta-chip {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .meta-chip-label {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--text-dim);
+      font-family: 'Orbitron', monospace;
+    }
+
+    .meta-chip-value {
+      font-size: 13px;
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    /* ── No-Ads Banner ── */
+    .no-ads-banner {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      background: linear-gradient(135deg, rgba(0,229,160,0.08), rgba(0,229,255,0.05));
+      border: 1px solid rgba(0,229,160,0.25);
+      border-radius: 14px;
+      padding: 18px 22px;
+      margin-bottom: 40px;
+      animation: fadeSlideUp 0.6s 0.4s ease both;
+    }
+
+    .no-ads-icon {
+      width: 44px; height: 44px;
+      border-radius: 12px;
+      background: rgba(0,229,160,0.12);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 22px;
+      flex-shrink: 0;
+    }
+
+    .no-ads-text strong {
+      display: block;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--green);
+      margin-bottom: 3px;
+    }
+
+    .no-ads-text p {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    /* ── Commitment cards (top 3) ── */
+    .commit-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 12px;
+      margin-bottom: 48px;
+      animation: fadeSlideUp 0.6s 0.5s ease both;
+    }
+
+    .commit-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 20px;
+      transition: border-color 0.2s, background 0.2s;
+    }
+
+    .commit-card:hover {
+      border-color: var(--border-hover);
+      background: var(--surface-hover);
+    }
+
+    .commit-icon {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .commit-card h3 {
+      font-size: 13px;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 5px;
+      font-family: 'Orbitron', monospace;
+      letter-spacing: 0.03em;
+    }
+
+    .commit-card p {
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
+
+    /* ── Section divider title ── */
+    .section-divider {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin: 48px 0 24px;
+      animation: fadeSlideUp 0.5s ease both;
+    }
+
+    .section-divider-line {
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    .section-divider-label {
+      font-family: 'Orbitron', monospace;
+      font-size: 9px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+    }
+
+    /* ── Accordion sections ── */
+    .accordion {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .acc-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+      transition: border-color 0.2s;
+    }
+
+    .acc-item:hover { border-color: var(--border-hover); }
+    .acc-item.active { border-color: rgba(0,229,255,0.2); }
+
+    .acc-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 18px 20px;
+      cursor: pointer;
+      user-select: none;
+      transition: background 0.15s;
+    }
+
+    .acc-header:hover { background: var(--surface-hover); }
+
+    .acc-icon {
+      width: 38px; height: 38px;
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    .acc-icon.c-teal  { background: rgba(0,196,167,0.12); }
+    .acc-icon.c-blue  { background: rgba(77,166,255,0.12); }
+    .acc-icon.c-amber { background: rgba(255,179,71,0.12); }
+    .acc-icon.c-purple{ background: rgba(167,139,250,0.12); }
+    .acc-icon.c-green { background: rgba(0,229,160,0.12); }
+    .acc-icon.c-coral { background: rgba(255,127,114,0.12); }
+    .acc-icon.c-pink  { background: rgba(244,114,182,0.12); }
+    .acc-icon.c-cyan  { background: var(--cyan-dim); }
+
+    .acc-titles { flex: 1; }
+
+    .acc-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 2px;
+    }
+
+    .acc-desc {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .acc-chevron {
+      font-size: 18px;
+      color: var(--text-dim);
+      transition: transform 0.25s ease;
+      flex-shrink: 0;
+    }
+
+    .acc-item.active .acc-chevron { transform: rotate(180deg); }
+
+    .acc-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.25s ease;
+    }
+
+    .acc-item.active .acc-body { max-height: 600px; }
+
+    .acc-body-inner {
+      padding: 0 20px 20px;
+      border-top: 1px solid var(--border);
+    }
+
+    .acc-body-inner p {
+      font-size: 13.5px;
+      color: var(--text-muted);
+      line-height: 1.75;
+      margin-top: 14px;
+    }
+
+    .acc-list {
+      list-style: none;
+      margin-top: 12px;
+    }
+
+    .acc-list li {
+      font-size: 13px;
+      color: var(--text-muted);
+      padding: 8px 0 8px 22px;
+      border-bottom: 1px solid var(--border);
+      position: relative;
+      line-height: 1.55;
+    }
+
+    .acc-list li:last-child { border-bottom: none; }
+
+    .acc-list li::before {
+      content: '›';
+      position: absolute;
+      left: 4px;
+      color: var(--cyan);
+      font-size: 16px;
+      line-height: 1.4;
+    }
+
+    /* ── Contact ── */
+    .contact-section {
+      margin-top: 56px;
+      background: linear-gradient(135deg, #06102a 0%, #0b1838 60%, #07122a 100%);
+      border: 1px solid var(--cyan-border);
+      border-radius: 20px;
+      padding: 44px 32px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact-section::before {
+      content: '';
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 400px; height: 300px;
+      background: radial-gradient(ellipse, rgba(0,229,255,0.05) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .contact-ring {
+      position: absolute;
+      top: -80px; right: -80px;
+      width: 280px; height: 280px;
+      border-radius: 50%;
+      border: 1px solid rgba(0,229,255,0.07);
+    }
+
+    .contact-ring2 {
+      position: absolute;
+      bottom: -60px; left: -60px;
+      width: 200px; height: 200px;
+      border-radius: 50%;
+      border: 1px solid rgba(0,196,167,0.07);
+    }
+
+    .contact-eyebrow {
+      font-family: 'Orbitron', monospace;
+      font-size: 9px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--cyan);
+      margin-bottom: 16px;
+      position: relative;
+    }
+
+    .contact-section h2 {
+      font-family: 'Orbitron', monospace;
+      font-size: 22px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 10px;
+      position: relative;
+    }
+
+    .contact-section > p {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-bottom: 30px;
+      position: relative;
+    }
+
+    .email-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--cyan-dim);
+      border: 1px solid var(--cyan-border);
+      border-radius: 100px;
+      padding: 13px 28px;
+      color: var(--cyan);
+      font-size: 14px;
+      font-weight: 500;
+      font-family: 'Exo 2', sans-serif;
+      text-decoration: none;
+      transition: background 0.2s, box-shadow 0.2s, transform 0.15s;
+      position: relative;
+    }
+
+    .email-btn:hover {
+      background: rgba(0,229,255,0.2);
+      box-shadow: 0 0 24px rgba(0,229,255,0.15);
+      transform: translateY(-1px);
+    }
+
+    .email-btn:active { transform: translateY(0); }
+
+    .email-icon { font-size: 18px; }
+
+    .contact-note {
+      font-size: 12px;
+      color: var(--text-dim);
+      margin-top: 20px;
+      position: relative;
+    }
+
+    /* ── Footer ── */
+    footer {
+      margin-top: 48px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .footer-brand {
+      font-family: 'Orbitron', monospace;
+      font-size: 11px;
+      color: var(--text-dim);
+      letter-spacing: 0.05em;
+    }
+
+    .footer-brand span { color: var(--cyan); }
+
+    .footer-right {
+      font-size: 12px;
+      color: var(--text-dim);
+    }
+
+    /* ── Animations ── */
+    @keyframes fadeSlideUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Intersection observer classes */
+    .reveal { opacity: 0; transform: translateY(16px); transition: opacity 0.5s ease, transform 0.5s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ── Scrollbar ── */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: rgba(0,229,255,0.2); border-radius: 3px; }
+
+    @media (max-width: 520px) {
+      .hero h1 { font-size: 24px; }
+      .commit-grid { grid-template-columns: 1fr; }
+      .contact-section { padding: 32px 20px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="orb-bottom"></div>
+
+  <div class="container">
+
+    <!-- Hero -->
+    <div class="hero">
+      <div class="hero-eyebrow">
+        <div class="hero-eyebrow-dot"></div>
+        Privacy Policy
+      </div>
+      <h1>Interactive <em>Human Body</em><br>App</h1>
+      <p class="hero-sub">
+        We believe education should be private. This document explains, clearly and completely, how we handle your data — and what we never do.
+      </p>
+      <div class="hero-meta">
+        <div class="meta-chip">
+          <span class="meta-chip-label">Effective Date</span>
+          <span class="meta-chip-value">January 1, 2025</span>
+        </div>
+        <div class="meta-chip">
+          <span class="meta-chip-label">Last Updated</span>
+          <span class="meta-chip-value">May 2026</span>
+        </div>
+        <div class="meta-chip">
+          <span class="meta-chip-label">Version</span>
+          <span class="meta-chip-value">1.0</span>
+        </div>
+        <div class="meta-chip">
+          <span class="meta-chip-label">Language</span>
+          <span class="meta-chip-value">English / عربي</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- No Ads Banner -->
+    <div class="no-ads-banner reveal">
+      <div class="no-ads-icon">🛡️</div>
+      <div class="no-ads-text">
+        <strong>No Ads. No Tracking. No Third Parties.</strong>
+        <p>This app is 100% ad-free and collects zero personal data. Your learning experience is entirely private.</p>
+      </div>
+    </div>
+
+    <!-- Commitment cards -->
+    <div class="commit-grid reveal">
+      <div class="commit-card">
+        <div class="commit-icon">🚫</div>
+        <h3>Zero Ads</h3>
+        <p>No advertisements of any kind. Ever. Your screen belongs to learning, not marketing.</p>
+      </div>
+      <div class="commit-card">
+        <div class="commit-icon">🔒</div>
+        <h3>No Data Collected</h3>
+        <p>We do not collect, store, or process any personal information from you.</p>
+      </div>
+      <div class="commit-card">
+        <div class="commit-icon">🌐</div>
+        <h3>No Third Parties</h3>
+        <p>No analytics SDKs, no ad networks, no external services. Completely self-contained.</p>
+      </div>
+    </div>
+
+    <!-- Divider -->
+    <div class="section-divider reveal">
+      <div class="section-divider-line"></div>
+      <span class="section-divider-label">Detailed Policy</span>
+      <div class="section-divider-line"></div>
+    </div>
+
+    <!-- Accordion -->
+    <div class="accordion reveal">
+
+      <!-- 1 -->
+      <div class="acc-item" id="s1">
+        <div class="acc-header" onclick="toggleAcc('s1')">
+          <div class="acc-icon c-teal">🧬</div>
+          <div class="acc-titles">
+            <p class="acc-title">Information We Collect</p>
+            <p class="acc-desc">Short answer: nothing personal</p>
+          </div>
+          <span class="acc-chevron">⌄</span>
+        </div>
+        <div class="acc-body">
+          <div class="acc-body-inner">
+            <p>The Interactive Human Body App is a fully offline educational tool. We do <strong>not</strong> collect any of the following:</p>
+            <ul class="acc-list">
+              <li>Your name, email address, or any contact information</li>
+              <li>Location or GPS data of any kind</li>
+              <li>Device identifiers, advertising IDs, or fingerprints</li>
+              <li>Usage patterns, session recordings, or behavioral analytics</li>
+              <li>Any information about the organs or content you view inside the app</li>
+            </ul>
+            <p>The app functions entirely on your device without sending any data to external servers.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2 -->
+      <div class="acc-item" id="s2">
+        <div class="acc-header" onclick="toggleAcc('s2')">
+          <div class="acc-icon c-green">📵</div>
+          <div class="acc-titles">
+            <p class="acc-title">Advertising</p>
+            <p class="acc-desc">This app contains absolutely no ads</p>
+          </div>
+          <span class="acc-chevron">⌄</span>
+        </div>
+        <div class="acc-body">
+          <div class="acc-body-inner">
+            <p>We are committed to an ad-free experience, now and always. Specifically:</p>
+            <ul class="acc-list">
+              <li>No banner, interstitial, or video advertisements</li>
+              <li>No rewarded ads or sponsored content</li>
+              <li>No ad networks are integrated (e.g. AdMob, Meta Audience Network)</li>
+              <li>No in-app purchases that unlock "ad-free" mode — the app is always free of ads</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3 -->
+      <div class="acc-item" id="s3">
+        <div class="acc-header" onclick="toggleAcc('s3')">
+          <div class="acc-icon c-blue">🔗</div>
+          <div class="acc-titles">
+            <p class="acc-title">Third-Party Services</p>
+            <p class="acc-desc">None integrated in this app</p>
+          </div>
+          <span class="acc-chevron">⌄</span>
+        </div>
+        <div class="acc-body">
+          <div class="acc-body-inner">
+            <p>We do not use any third-party SDKs, analytics tools, or external services. This means:</p>
+            <ul class="acc-list">
+              <li>No Google Analytics, Firebase, or similar analytics platforms</li>
+              <li>No crash-reporting services that send data to external servers</li>
+              <li>No social media login or sharing integrations</li>
+              <li>No cloud sync — all content is stored locally on your device</li>
+              <li>No external CDNs or data calls at runtime</li>
+            </ul>
+            <p>The only external interaction this app may have is through the App Store / Google Play for download and updates — governed by Apple's and Google's own privacy policies respectively.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4 -->
+      <div class="acc-item" id="s4">
+        <div class="acc-header" onclick="toggleAcc('s4')">
+          <div class="acc-icon c-amber">👶</div>
+          <div class="acc-titles">
+            <p class="acc-title">Children's Privacy</p>
+            <p class="acc-desc">Safe for students of all ages</p>
+          </div>
+          <span class="acc-chevron">⌄</span>
+        </div>
+        <div class="acc-body">
+          <div class="acc-body-inner">
+            <p>Because we collect no personal data at all, the Interactive Human Body App is inherently safe for children of all ages. We comply fully with COPPA (Children's Online Privacy Protection Act) and similar international regulations.</p>
+            <ul class="acc-list">
+              <li>No account creation or registration required</li>
+              <li>No chat, messaging, or social features</li>
+              <li>No data ever leaves the device</li>
+              <li>Suitable for classroom and home educational use</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5 -->
+      <div class="acc-item" id="s5">
+        <div class="acc-header" onclick="toggleAcc('s5')">
+          <div class="acc-icon c-purple">🛡️</div>
+          <div class="acc-titles">
+            <p class="acc-title">Data Security</p>
+            <p class="acc-desc">Your device, your data</p>
+          </div>
+          <span class="acc-chevron">⌄</span>
+        </div>
+        <div class="acc-body">
+          <div class="acc-body-inner">
+            <p>Since the app does not transmit or store any personal data externally, there is no server-side risk of data breaches related to your personal information. All app content and any saved preferences remain solely on your device, protected by your operating system's built-in security features.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6 -->
+      <div class="acc-item" id="s6">
+        <div class="acc-header" onclick="toggleAcc('s6')">
+          <div class="acc-icon c-coral">⚖️</div>
+          <div class="acc-titles">
+            <p class="acc-title">Your Rights</p>
+            <p class="acc-desc">Full control, always</p>
+          </div>
+          <span class="acc-chevron">⌄</span>
+        </div>
+        <div class="acc-body">
+          <div class="acc-body-inner">
+            <p>Because we hold no personal data about you, there is nothing for us to access, correct, or delete on our end. You have complete control:</p>
+            <ul class="acc-list">
+              <li>Uninstalling the app removes all locally stored preferences</li>
+              <li>No account means no profile data held anywhere</li>
+              <li>No opt-in or opt-out needed — privacy is the default and only mode</li>
+            </ul>
+            <p>If you have any questions or concerns, please reach out to us directly using the contact below.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 7 -->
+      <div class="acc-item" id="s7">
+        <div class="acc-header" onclick="toggleAcc('s7')">
+          <div class="acc-icon c-cyan">🔄</div>
+          <div class="acc-titles">
+            <p class="acc-title">Policy Updates</p>
+            <p class="acc-desc">Transparency if anything changes</p>
+          </div>
+          <span class="acc-chevron">⌄</span>
+        </div>
+        <div class="acc-body">
+          <div class="acc-body-inner">
+            <p>We may update this Privacy Policy from time to time. When we do, the "Last Updated" date at the top will be revised. We are committed to maintaining our no-ads, no-tracking, no-third-parties stance and will never introduce such features without clear notice. If any significant change is made, we will notify users through an in-app message or App Store update notes.</p>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /accordion -->
+
+    <!-- Contact Section -->
+    <div class="contact-section reveal">
+      <div class="contact-ring"></div>
+      <div class="contact-ring2"></div>
+      <p class="contact-eyebrow">Contact Us</p>
+      <h2>Have a Question?</h2>
+      <p>We're happy to clarify anything about this policy or the app. Reach out anytime — we respond personally.</p>
+      <a class="email-btn" href="mailto:omran_adam@yahoo.com">
+        <span class="email-icon">✉️</span>
+        omran_adam@yahoo.com
+      </a>
+      <p class="contact-note">We typically respond within 1–3 business days.</p>
+    </div>
+
+    <!-- Footer -->
+    <footer class="reveal">
+      <div class="footer-brand">
+        <span>Interactive Human Body</span> App
+      </div>
+      <div class="footer-right">© 2025 · All rights reserved</div>
+    </footer>
+
+  </div><!-- /container -->
+
+  <script>
+    function toggleAcc(id) {
+      const item = document.getElementById(id);
+      const isActive = item.classList.contains('active');
+      document.querySelectorAll('.acc-item.active').forEach(el => el.classList.remove('active'));
+      if (!isActive) item.classList.add('active');
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+    }, { threshold: 0.08 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
 </body>
 </html>
